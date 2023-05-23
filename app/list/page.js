@@ -7,17 +7,17 @@ export default function List() {
     {
       name: "Tomatoes",
       price: "20",
-      수량: 0
+      quantity: 0
     },
     {
       name: "Pasta",
       price: "30",
-      수량: 0
+      quantity: 0
     },
     {
       name: "Coconut",
       price: "40",
-      수량: 0
+      quantity: 0
     },
   ]);
   
@@ -25,17 +25,17 @@ export default function List() {
     const copy = [...products];
     copy[i] = {
       ...copy[i],
-      수량: copy[i].수량 + 1
+      quantity: copy[i].quantity + 1
     };
     setProducts(copy);
   };
 
   const decreaseQuantity = (i) => {
     const copy = [...products];
-    if (copy[i].수량 > 0) {
+    if (copy[i].quantity > 0) {
       copy[i] = {
         ...copy[i],
-        수량: copy[i].수량 - 1
+        quantity: copy[i].quantity - 1
       };
       setProducts(copy);
     }
@@ -50,7 +50,7 @@ export default function List() {
             <img src={`/food${idx}.png`} className="food-img" alt={item.name}/>
             <h4>{item.name} ${item.price}</h4>
             <button onClick={()=>{decreaseQuantity(idx)}}>-</button>
-            <span> {item.수량} </span>
+            <span> {item.quantity} </span>
             <button onClick={()=>{increaseQuantity(idx)}}>+</button>
           </div>
         );
